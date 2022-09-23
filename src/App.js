@@ -1,6 +1,15 @@
 import "./App.css";
 
 function App() {
+  /*Funcionalidades del semaforo: Encendido*/
+  const [encendido, setEncendido] = useState("");
+  /*Funcionalidades del semaforo: Luz Roja*/
+  const [rojo, setRojo] = useState(false);
+  /*Funcionalidades del semaforo: Luz Amarilla*/
+  const [amarillo, setAmarillo] = useState(false);
+  /*Funcionalidades del semaforo: Luz Verde*/
+  const [verde, setVerde] = useState(false);
+
   return (
     <div className="container">
       <div className="viga">
