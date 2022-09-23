@@ -1,8 +1,7 @@
 import "./App.css";
+import { useState } from "react";
 
 function App() {
-  /*Funcionalidades del semaforo: Encendido*/
-  const [encendido, setEncendido] = useState("");
   /*Funcionalidades del semaforo: Luz Roja*/
   const [rojo, setRojo] = useState(false);
   /*Funcionalidades del semaforo: Luz Amarilla*/
@@ -14,10 +13,30 @@ function App() {
     <div className="container">
       <div className="viga">
         <div className="contenedor-semaforo">
-          <div className="rojo luz"></div>
-          <div className="amarillo luz"></div>
-          <div className="verde luz"></div>
-          <div></div>
+          <div
+            className={`rojo ${rojo === true ? "encendido" : ""}`}
+            onClick={() => {
+              setRojo(!rojo);
+              setAmarillo(false);
+              setVerde(false);
+            }}
+          ></div>
+          <div
+            className={`amarillo ${amarillo === true ? "encendido" : ""}`}
+            onClick={() => {
+              setAmarillo(!amarillo);
+              setRojo(false);
+              setVerde(false);
+            }}
+          ></div>
+          <div
+            className={`verde ${verde === true ? "encendido" : ""}`}
+            onClick={() => {
+              setVerde(!verde);
+              setAmarillo(false);
+              setRojo(false);
+            }}
+          ></div>
         </div>
       </div>
     </div>
